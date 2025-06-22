@@ -15,7 +15,7 @@ int main()
 								"3. what is your crush domain" };
 
 	std::string options[][4] = {{"A. 1","B. 2","C. 0","D -1"},
-	  {"A. in diddy's basement","B. epstein island"," C. micheal jackson's basement","D. Mr.beast's video"},
+	  {"A. in diddy's basement","B. epstein island","C. micheal jackson's basement","D. Mr.beast's video"},
 	 {"A. out of world","B. phub","C. youtube kids","D. larry's wife"}};
 
 	char answerKey[] = { 'C','B','B' };
@@ -43,8 +43,8 @@ int main()
 			std::cout << "You are Wrong!" << std::endl;
 			std::cout << "Correct ans is" << answerKey[i] << std::endl;
 		}
-		std::cout << "****************************************" << std::endl;
 	} std::cout << "your final score is " << score << " out of " << size << std::endl;
+	std::cout << "****************************************" << std::endl;
 	
 
 	// Dynamic array example
@@ -226,9 +226,6 @@ int main()
 	{
 		std::cout << "Food not found" << std::endl;
 	}
-	
-	free(fastfoods); // Free the dynamically allocated memory
-	free(Games); // Free the dynamically allocated memory
 	return 0;
 
 }
