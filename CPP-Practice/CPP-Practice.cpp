@@ -4,12 +4,35 @@
 #include <iostream>
 #include <string>
 
+void refswap(std::string &x, std::string &y);
 int searchFood(std::string foods[], int size, std::string element);
 void Ascending(double arr[], int size);
 void Descending(double arr[], int size);
 int main()
 
-{ // Quiz game
+{ 
+	// Pass by value and pass by refrence
+	std::string x = "kool-Aid";
+	std::string y = "unkool-Aid";
+	refswap(x,y);
+	std::cout << x << std::endl;
+	std::cout << y << std::endl;
+	system("pause");
+	system("cls");
+	
+	// Memory address = a location in memory where data is stored
+	
+	std::string Stuname = "Vidhi";
+	int age = 21;
+	bool student = true;
+
+	std::cout << &Stuname << std::endl;
+	std::cout << Stuname << std::endl;
+
+
+	system("pause");
+	system("cls");
+	// Quiz game
 	std::string questions[] = { "1. What is your body count",
 								"2. Where is perry the playtipus",
 								"3. what is your crush domain" };
@@ -41,12 +64,13 @@ int main()
 		}
 		else {
 			std::cout << "You are Wrong!" << std::endl;
-			std::cout << "Correct ans is" << answerKey[i] << std::endl;
+			std::cout << "Correct ans is " << answerKey[i] << std::endl;
 		}
 	} std::cout << "your final score is " << score << " out of " << size << std::endl;
 	std::cout << "****************************************" << std::endl;
 	
-
+	system("pause");
+	system("cls");
 	// Dynamic array example
 
 	std::string cars[][3] = { {"BMW", "Audi", "Mercedes"},
@@ -72,6 +96,9 @@ int main()
 		}
 		std::cout << "\n";
 	}
+ 
+	system("pause");
+	system("cls");
 
 	// Example of array with user input
 	int count = 0;
@@ -81,18 +108,24 @@ int main()
 
 	for (int i = 0; i < arrsize; i++)
 	{
-		std::cout << "Enter a food you like #" << i <<" :";
-		std::getline(std::cin, temp);
+		do {
+			std::cout << "Enter a food you like #" << i << " :"<< std::endl;
+			std::getline(std::cin, temp);
 		if(temp == "q" || temp == "Q")
 		{
 			std::cout << "Exiting input..." << std::endl;
 			break;
+		}
+		else if (temp.empty())
+		{
+			std::cout << "input is not valid please try again" << std::endl;
 		}
 		else {
 			array[i] = temp;
 			count++;
 			std::cout << "You entered: " << array[i] << std::endl;
 		}
+		} while(temp.empty());
 	}
 
 	std::cout << "Array elements are: " << std::endl;
@@ -101,6 +134,9 @@ int main()
 	{
 		std::cout << array[i] << std::endl;
 	}
+
+	system("pause");
+	system("cls");
 
 	//fill() =fills the array with a specific value
 	const int fillsize = 99;
@@ -267,4 +303,12 @@ void Descending(double arr[], int size)
 			}
 		}
 	}
+}
+void refswap(std::string &x, std::string &y)
+{
+		std::string temp;
+		temp = x;
+		x = y;
+		y = temp;
+		
 }
