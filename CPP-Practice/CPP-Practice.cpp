@@ -10,7 +10,40 @@ void Ascending(double arr[], int size);
 void Descending(double arr[], int size);
 int main()
 
-{ 
+{
+	// Null pointer example
+	int *ptr = nullptr;
+	int ex = 123;
+	
+	ptr = &ex;
+
+	if (ptr == nullptr)
+	{
+		std::cout << "not assigned an adderess." << std::endl;
+		std::cout << *ptr <<std::endl;
+	}
+	else
+	{
+		std::cout << "assigned an adderess successfully." << std::endl;
+	}
+
+	// pointer example
+	std::string name = "Bro";
+	int manage = 21;
+
+	std::string freepizzas[5] = { "pizza1","pizza2","pizza3","pizza4","pizza5"};
+	std::string *pfreepizzas = freepizzas;
+
+	std::string *pName = &name;
+	int* pAge = &manage;
+	std::cout << *pName << std::endl;
+	std::cout << *pAge << std::endl;
+	
+	for (int i = 0; i < 5; i++)
+	{
+	std::cout << *pfreepizzas << std::endl;
+	}
+
 	// Pass by value and pass by refrence
 	std::string x = "kool-Aid";
 	std::string y = "unkool-Aid";
